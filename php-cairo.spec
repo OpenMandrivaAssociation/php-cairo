@@ -6,7 +6,7 @@
 
 Summary:	Cairo Graphics Library Extension
 Name:		php-%{modname}
-Version:	0.3.1
+Version:	0.3.2
 Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
