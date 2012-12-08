@@ -7,7 +7,7 @@
 Summary:	Cairo Graphics Library Extension
 Name:		php-%{modname}
 Version:	0.3.2
-Release:	%mkrel 2
+Release:	3
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/Cairo/
@@ -16,7 +16,6 @@ BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	apache-devel >= 2.2.0
 BuildRequires:	pkgconfig
 BuildRequires:	cairo-devel >= 1.4
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Cairo is a 2D graphics library with support for multiple output devices.
@@ -38,8 +37,6 @@ phpize
 mv modules/*.so .
 
 %install
-rm -rf %{buildroot} 
-
 install -d %{buildroot}%{_libdir}/php/extensions
 install -d %{buildroot}%{_sysconfdir}/php.d
 
@@ -61,12 +58,78 @@ if [ "$1" = "0" ]; then
     fi
 fi
 
-%clean
-rm -rf %{buildroot}
-
 %files 
-%defattr(-,root,root)
 %doc CREDITS IGNORED README SYMBOLS TODO package*.xml 
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
 
+
+
+%changelog
+* Thu May 03 2012 Oden Eriksson <oeriksson@mandriva.com> 0.3.2-2mdv2012.0
++ Revision: 795406
+- rebuild for php-5.4.x
+
+* Mon Apr 23 2012 Oden Eriksson <oeriksson@mandriva.com> 0.3.2-1
++ Revision: 792792
+- 0.3.2
+
+* Tue Apr 10 2012 Oden Eriksson <oeriksson@mandriva.com> 0.3.1-1
++ Revision: 790145
+- 0.3.1
+
+* Sun Jan 15 2012 Oden Eriksson <oeriksson@mandriva.com> 0.2.0-10
++ Revision: 761205
+- rebuild
+
+* Wed Aug 24 2011 Oden Eriksson <oeriksson@mandriva.com> 0.2.0-9
++ Revision: 696398
+- rebuilt for php-5.3.8
+
+* Fri Aug 19 2011 Oden Eriksson <oeriksson@mandriva.com> 0.2.0-8
++ Revision: 695371
+- rebuilt for php-5.3.7
+
+* Sat Mar 19 2011 Oden Eriksson <oeriksson@mandriva.com> 0.2.0-7
++ Revision: 646617
+- rebuilt for php-5.3.6
+
+* Sat Jan 08 2011 Oden Eriksson <oeriksson@mandriva.com> 0.2.0-6mdv2011.0
++ Revision: 629770
+- rebuilt for php-5.3.5
+
+* Mon Jan 03 2011 Oden Eriksson <oeriksson@mandriva.com> 0.2.0-5mdv2011.0
++ Revision: 628072
+- ensure it's built without automake1.7
+
+* Wed Nov 24 2010 Oden Eriksson <oeriksson@mandriva.com> 0.2.0-4mdv2011.0
++ Revision: 600466
+- rebuild
+
+* Sun Oct 24 2010 Oden Eriksson <oeriksson@mandriva.com> 0.2.0-3mdv2011.0
++ Revision: 588748
+- rebuild
+
+* Fri Mar 05 2010 Oden Eriksson <oeriksson@mandriva.com> 0.2.0-2mdv2010.1
++ Revision: 514522
+- rebuilt for php-5.3.2
+
+* Tue Feb 16 2010 Oden Eriksson <oeriksson@mandriva.com> 0.2.0-1mdv2010.1
++ Revision: 506531
+- 0.2.0
+
+* Sat Jan 02 2010 Oden Eriksson <oeriksson@mandriva.com> 0.1.0-3mdv2010.1
++ Revision: 485344
+- rebuilt for php-5.3.2RC1
+
+* Sat Nov 21 2009 Oden Eriksson <oeriksson@mandriva.com> 0.1.0-2mdv2010.1
++ Revision: 468149
+- rebuilt against php-5.3.1
+
+* Sat Oct 03 2009 Oden Eriksson <oeriksson@mandriva.com> 0.1.0-1mdv2010.0
++ Revision: 452904
+- import php-cairo
+
+
+* Sat Oct 03 2009 Oden Eriksson <oeriksson@mandriva.com> 0.1.0-1mdv2010.0
+- initial Mandriva package
