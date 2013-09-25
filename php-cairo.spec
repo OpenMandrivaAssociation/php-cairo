@@ -11,9 +11,9 @@ Group:		Development/PHP
 License:	PHP License
 Url:		http://pecl.php.net/package/Cairo/
 Source0:	http://pecl.php.net/get/%{rname}-%{version}.tgz
-BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	apache-devel >= 2.2.0
-BuildRequires:	cairo-devel >= 1.4
+BuildRequires:	php-devel >= 3:5.2.0
+BuildRequires:	pkgconfig(cairo)
 
 %description
 Cairo is a 2D graphics library with support for multiple output devices.
