@@ -6,7 +6,7 @@
 Summary:	Cairo Graphics Library Extension
 Name:		php-%{modname}
 Version:	0.3.2
-Release:	6
+Release:	7
 Group:		Development/PHP
 License:	PHP License
 Url:		http://pecl.php.net/package/Cairo/
