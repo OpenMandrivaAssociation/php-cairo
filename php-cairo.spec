@@ -9,7 +9,7 @@ Version:	0.3.2
 Release:	12
 Group:		Development/PHP
 License:	PHP License
-Url:		http://pecl.php.net/package/Cairo/
+Url:		https://pecl.php.net/package/Cairo/
 Source0:	http://pecl.php.net/get/%{rname}-%{version}.tgz
 BuildRequires:	apache-devel >= 2.2.0
 BuildRequires:	php-devel >= 3:5.2.0
